@@ -121,6 +121,9 @@ rust_library(
         "@rules_rust//rust/platform:riscv32imc-unknown-none-elf": [
             "@crates_vendor_manifests__libc-0.2.137//:libc",  # cfg(not(windows))
         ],
+        "@rules_rust//rust/platform:riscv64gc-unknown-none-elf": [
+            "@crates_vendor_manifests__libc-0.2.137//:libc",  # cfg(not(windows))
+        ],
         "@rules_rust//rust/platform:s390x-unknown-linux-gnu": [
             "@crates_vendor_manifests__libc-0.2.137//:libc",  # cfg(not(windows))
         ],
