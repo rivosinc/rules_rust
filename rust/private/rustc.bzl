@@ -891,6 +891,8 @@ def construct_arguments(
         rustc_flags.add_all(getattr(attr, "crate_features"), before_each = "--cfg", format_each = 'feature="%s"')
     if linker_script:
         rustc_flags.add(linker_script.path, format = "--codegen=link-arg=-T%s")
+    rustc_flags.add("--codegen=link-arg=-nostartfiles")
+    rustc_flags.add("--codegen=link-arg=-nostdlib")
 
     # Gets the paths to the folders containing the standard library (or libcore)
     rust_std_paths = toolchain.rust_std_paths.to_list()
