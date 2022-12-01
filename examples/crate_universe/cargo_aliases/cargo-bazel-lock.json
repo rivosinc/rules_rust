@@ -1,5 +1,5 @@
 {
-  "checksum": "b72bef7e074648eca4ccf106b8d158a0cc78b38080754adb008de426b6958351",
+  "checksum": "6dcd6fba667c2a840bf66b00bccf9b13845e9f1fc9052d45a17e472e4dc449e2",
   "crates": {
     "aho-corasick 0.7.20": {
       "name": "aho-corasick",
@@ -422,7 +422,7 @@
               "target": "quote"
             },
             {
-              "id": "syn 1.0.104",
+              "id": "syn 1.0.105",
               "target": "syn"
             }
           ],
@@ -510,7 +510,7 @@
               "target": "quote"
             },
             {
-              "id": "syn 1.0.104",
+              "id": "syn 1.0.105",
               "target": "syn"
             }
           ],
@@ -1446,7 +1446,7 @@
               "target": "quote"
             },
             {
-              "id": "syn 1.0.104",
+              "id": "syn 1.0.105",
               "target": "syn"
             }
           ],
@@ -1974,13 +1974,13 @@
       },
       "license": "MIT"
     },
-    "syn 1.0.104": {
+    "syn 1.0.105": {
       "name": "syn",
-      "version": "1.0.104",
+      "version": "1.0.105",
       "repository": {
         "Http": {
-          "url": "https://crates.io/api/v1/crates/syn/1.0.104/download",
-          "sha256": "4ae548ec36cf198c0ef7710d3c230987c2d6d7bd98ad6edc0274462724c585ce"
+          "url": "https://crates.io/api/v1/crates/syn/1.0.105/download",
+          "sha256": "60b9b43d45702de4c839cb9b51d9f529c5dd26a4aff255b42b1ebc03e88ee908"
         }
       },
       "targets": [
@@ -2035,7 +2035,7 @@
               "target": "quote"
             },
             {
-              "id": "syn 1.0.104",
+              "id": "syn 1.0.105",
               "target": "build_script_build"
             },
             {
@@ -2046,7 +2046,7 @@
           "selects": {}
         },
         "edition": "2018",
-        "version": "1.0.104"
+        "version": "1.0.105"
       },
       "build_script_attrs": {
         "data_glob": [

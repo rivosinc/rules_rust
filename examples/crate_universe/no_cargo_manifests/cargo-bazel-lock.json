@@ -1,5 +1,5 @@
 {
-  "checksum": "cdf312d7b34c054b101ae2c87565a47d5dd31c48be662753a0dec5b68c97d279",
+  "checksum": "65a10454f6e5293f5ff1bb6771bc382118c0b7caa6b14220ed2698c84d5ce536",
   "crates": {
     "async-trait 0.1.59": {
       "name": "async-trait",
@@ -56,7 +56,7 @@
               "target": "quote"
             },
             {
-              "id": "syn 1.0.104",
+              "id": "syn 1.0.105",
               "target": "syn"
             }
           ],
@@ -2355,7 +2355,7 @@
               "target": "quote"
             },
             {
-              "id": "syn 1.0.104",
+              "id": "syn 1.0.105",
               "target": "syn"
             }
           ],
@@ -3109,13 +3109,13 @@
       },
       "license": "MIT OR Apache-2.0"
     },
-    "syn 1.0.104": {
+    "syn 1.0.105": {
       "name": "syn",
-      "version": "1.0.104",
+      "version": "1.0.105",
       "repository": {
         "Http": {
-          "url": "https://crates.io/api/v1/crates/syn/1.0.104/download",
-          "sha256": "4ae548ec36cf198c0ef7710d3c230987c2d6d7bd98ad6edc0274462724c585ce"
+          "url": "https://crates.io/api/v1/crates/syn/1.0.105/download",
+          "sha256": "60b9b43d45702de4c839cb9b51d9f529c5dd26a4aff255b42b1ebc03e88ee908"
         }
       },
       "targets": [
@@ -3173,7 +3173,7 @@
               "target": "quote"
             },
             {
-              "id": "syn 1.0.104",
+              "id": "syn 1.0.105",
               "target": "build_script_build"
             },
             {
@@ -3184,7 +3184,7 @@
           "selects": {}
         },
         "edition": "2018",
-        "version": "1.0.104"
+        "version": "1.0.105"
       },
       "build_script_attrs": {
         "data_glob": [
@@ -3456,7 +3456,7 @@
               "target": "quote"
             },
             {
-              "id": "syn 1.0.104",
+              "id": "syn 1.0.105",
               "target": "syn"
             }
           ],
@@ -3892,7 +3892,7 @@
               "target": "quote"
             },
             {
-              "id": "syn 1.0.104",
+              "id": "syn 1.0.105",
               "target": "syn"
             }
           ],
