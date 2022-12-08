@@ -671,7 +671,8 @@ def load_arbitrary_tool(ctx, tool_name, tool_subdirectories, version, iso_date, 
             urls.append(new_url)
 
     tool_path = produce_tool_path(tool_name, target_triple, version)
-    archive_path = tool_path + _get_tool_extension(ctx)
+
+    archive_path = tool_suburl + _get_tool_extension(ctx)
     sha256 = getattr(ctx.attr, "sha256s", dict()).get(archive_path) or FILE_KEY_TO_SHA.get(archive_path) or sha256
 
     for subdirectory in tool_subdirectories:
