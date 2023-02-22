@@ -492,7 +492,7 @@ mod test {
         assert_eq!(manifest.resolver_version, cargo_toml::Resolver::V2);
 
         // Check packages
-        assert_eq!(manifest.direct_packages.len(), 1);
+        assert_eq!(manifest.direct_packages.len(), 4);
         let package = manifest.direct_packages.get("rand").unwrap();
         assert_eq!(
             package,
@@ -500,6 +500,36 @@ mod test {
                 default_features: false,
                 features: vec!["small_rng".to_owned()],
                 version: Some("0.8.5".to_owned()),
+                ..Default::default()
+            }
+        );
+        let package = manifest.direct_packages.get("cfg-if").unwrap();
+        assert_eq!(
+            package,
+            &cargo_toml::DependencyDetail {
+                git: Some("https://github.com/rust-lang/cfg-if.git".to_owned()),
+                rev: Some("b9c2246a".to_owned()),
+                default_features: true,
+                ..Default::default()
+            }
+        );
+        let package = manifest.direct_packages.get("log").unwrap();
+        assert_eq!(
+            package,
+            &cargo_toml::DependencyDetail {
+                git: Some("https://github.com/rust-lang/log.git".to_owned()),
+                branch: Some("master".to_owned()),
+                default_features: true,
+                ..Default::default()
+            }
+        );
+        let package = manifest.direct_packages.get("cargo_toml").unwrap();
+        assert_eq!(
+            package,
+            &cargo_toml::DependencyDetail {
+                git: Some("https://gitlab.com/crates.rs/cargo_toml.git".to_owned()),
+                tag: Some("v0.15.2".to_owned()),
+                default_features: true,
                 ..Default::default()
             }
         );
