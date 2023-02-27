@@ -587,8 +587,8 @@ See [specifying dependencies][sd] in the Cargo book for more details.
 | <a id="crate.spec-default_features"></a>default_features |  Maps to the <code>default-features</code> flag.   |  `True` |
 | <a id="crate.spec-features"></a>features |  A list of features to use for the crate   |  `[]` |
 | <a id="crate.spec-git"></a>git |  The Git url to use for the crate. Cannot be used with <code>version</code>.   |  `None` |
-| <a id="crate.spec-branch"></a>branch |  The git branch of the remote crate. Tied with the <code>git</code> param. Only one of branch, tag or rev may be specified.   |  `None` |
-| <a id="crate.spec-tag"></a>tag |  The git tag of the remote crate. Tied with the <code>git</code> param. Only one of branch, tag or rev may be specified.   |  `None` |
+| <a id="crate.spec-branch"></a>branch |  The git branch of the remote crate. Tied with the <code>git</code> param. Only one of branch, tag or rev may be specified. Specifying <code>rev</code> is recommended for fully-reproducible builds.   |  `None` |
+| <a id="crate.spec-tag"></a>tag |  The git tag of the remote crate. Tied with the <code>git</code> param. Only one of branch, tag or rev may be specified. Specifying <code>rev</code> is recommended for fully-reproducible builds.   |  `None` |
 | <a id="crate.spec-rev"></a>rev |  The git revision of the remote crate. Tied with the <code>git</code> param. Only one of branch, tag or rev may be specified.   |  `None` |
 
 **RETURNS**
