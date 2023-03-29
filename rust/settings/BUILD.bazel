@@ -1,5 +1,5 @@
 load("@bazel_skylib//:bzl_library.bzl", "bzl_library")
-load("@bazel_skylib//rules:common_settings.bzl", "bool_flag", "string_flag")
+load("@bazel_skylib//rules:common_settings.bzl", "bool_flag", "string_flag", "string_list_flag")
 
 package(default_visibility = ["//visibility:public"])
 
@@ -47,4 +47,14 @@ bool_flag(
 bzl_library(
     name = "bzl_lib",
     srcs = glob(["**/*.bzl"]),
+)
+
+string_list_flag(
+    name = "opt_level",
+    build_setting_default = [],
+)
+
+string_list_flag(
+    name = "debug_info",
+    build_setting_default = [],
 )

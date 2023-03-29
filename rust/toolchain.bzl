@@ -428,12 +428,39 @@ def _rust_toolchain_impl(ctx):
         list: A list containing the target's toolchain Provider info
     """
     compilation_mode_opts = {}
-    for k, v in ctx.attr.opt_level.items():
-        if not k in ctx.attr.debug_info:
+
+    opt_level = ctx.attr.opt_level
+    opt_level_override = ctx.attr._opt_level_cmdline[BuildSettingInfo].value
+    if opt_level_override:
+        print("Overriding opt_level with " + str(opt_level_override))
+        if len(opt_level_override) == 1:
+            opt_level_override = [
+                opt_level_override[0],
+                opt_level_override[0],
+                opt_level_override[0],
+            ]
+        opt_level = {
+            "dbg": opt_level_override[0],
+            "fastbuild": opt_level_override[1],
+            "opt": opt_level_override[2],
+        }
+
+    debug_info = ctx.attr.debug_info
+    debug_info_override = ctx.attr._debug_info_cmdline[BuildSettingInfo].value
+    if debug_info_override:
+        print("Overriding debug_info with " + str(debug_info_override))
+        debug_info = {
+            "dbg": debug_info_override[0],
+            "fastbuild": debug_info_override[1],
+            "opt": debug_info_override[2],
+        }
+
+    for k, v in opt_level.items():
+        if not k in debug_info:
             fail("Compilation mode {} is not defined in debug_info but is defined opt_level".format(k))
-        compilation_mode_opts[k] = struct(debug_info = ctx.attr.debug_info[k], opt_level = v)
-    for k, v in ctx.attr.debug_info.items():
-        if not k in ctx.attr.opt_level:
+        compilation_mode_opts[k] = struct(debug_info = debug_info[k], opt_level = v)
+    for k, v in debug_info.items():
+        if not k in opt_level:
             fail("Compilation mode {} is not defined in opt_level but is defined debug_info".format(k))
 
     rename_first_party_crates = ctx.attr._rename_first_party_crates[BuildSettingInfo].value
@@ -626,6 +653,9 @@ rust_toolchain = rule(
                 "opt": "0",
             },
         ),
+        "_debug_info_cmdline": attr.label(
+            default = Label("//rust/settings:debug_info"),
+        ),
         "default_edition": attr.string(
             doc = (
                 "The edition to use for rust_* rules that don't specify an edition. " +
@@ -677,6 +707,9 @@ rust_toolchain = rule(
                 "fastbuild": "0",
                 "opt": "3",
             },
+        ),
+        "_opt_level_cmdline": attr.label(
+            default = Label("//rust/settings:opt_level"),
         ),
         "os": attr.string(
             doc = "The operating system for the current toolchain",
